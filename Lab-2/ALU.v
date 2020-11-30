@@ -14,7 +14,7 @@ module ALU(inA, inB, func, out, zero);
     always @* begin
         case(func)
 	    6'b000: out <= inA + inB;
-            //implement other operation here.
+            6'b001: out <= inA - inB;
         endcase
     end
 
