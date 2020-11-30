@@ -152,22 +152,22 @@ module TopLevel(clk, rst, test_reg);
 
 	
 	Control CPUControl(
-			.instruction(), //blank
+			.instruction(instruction), //blank
 			.regWrite(regWrite),
 			.regDst(regDst),
 			.aluSrc(aluSrc),
 			.memWrite(dMemWrite),
 			.memRead(dMemRead),
 			.memToReg(memToReg),
-			.aluOp(), //blank
+			.aluOp(aluOp), //blank
 			.jump(jump),
 			.branch(branchCtr)
 		);
 
 	ALUControl ALUControl(
-			.aluOp(), //blank
-			.opCode(), //blank
-			.func(), //blank
+			.aluOp(aluOp), //blank
+			.opCode(opCode), //blank
+			.func(func), //blank
 			.aluFunc(aluFunc)
 		);
 
