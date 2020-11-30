@@ -24,7 +24,7 @@ module Control(instruction, regWrite, regDst, aluSrc, memWrite, memToReg, memRea
             6'b100011: begin regDst <= 1'b0; jump <= 1'b0; aluSrc = 1'b1; memToReg = 1'b1; regWrite = 1'b1; memRead = 1'b1; memWrite = 1'b0; branch = 1'b0; aluOp = 2'b00; end // lw
 	    6'b101011: begin regDst <= 1'bz; jump <= 1'b0; aluSrc = 1'b1; memToReg = 1'bz; regWrite = 1'b0; memRead = 1'b0; memWrite = 1'b1; branch = 1'b0; aluOp = 2'b00; end //sw
 	    6'b000100: begin regDst <= 1'bz; jump <= 1'b0; aluSrc = 1'b0; memToReg = 1'bz; regWrite = 1'b0; memRead = 1'b0; memWrite = 1'b0; branch = 1'b1; aluOp = 2'b01; end //beq
-	    6'b001000: begin regDst <= 1'b0; jump <= 1'b0; aluSrc = 1'b1; memToReg = 1'b0; regWrtie = 1'b1; memRead = 1'b0; memWrite = 1'b0; branch = 1'b1; aluOp = 2'b11; end //addi
+	    6'b001000: begin regDst <= 1'b0; jump <= 1'b0; aluSrc = 1'b1; memToReg = 1'b0; regWrite = 1'b1; memRead = 1'b0; memWrite = 1'b0; branch = 1'b1; aluOp = 2'b11; end //addi
             6'b000010: begin regDst <= 1'b0; jump <= 1'b1; aluSrc = 1'b0; memToReg = 1'b0; regWrite = 1'b0; memRead = 1'b0; memWrite = 1'b0; branch = 1'b0; aluOp = 2'b00; end // jump
             6'b111111: begin regDst <= 1'bz; jump <= 1'bz; aluSrc = 1'bz; memToReg = 1'bz; regWrite = 1'bz; memRead = 1'bz; memWrite = 1'bz; branch = 1'bz; aluOp = 2'bzz; end // halt
             default:   begin regDst <= 1'bz; jump <= 1'bz; aluSrc = 1'bz; memToReg = 1'bz; regWrite = 1'bz; memRead = 1'bz; memWrite = 1'bz; branch = 1'bz; aluOp = 2'bzz; end
